@@ -44,5 +44,7 @@ chmod 755 "$PLUGIN_DIR/plugin.pyc"
 
 echo "================================================="
 echo "✅ CinemaIQ Installation Complete!"
-echo "📺 Restart Enigma2 to see the plugin."
+echo "🔄 GUI will restart in 5 seconds..."
 echo "================================================="
+sleep 1; echo "4..."; sleep 1; echo "3..."; sleep 1; echo "2..."; sleep 1; echo "1..."; sleep 1;
+killall -9 enigma2
