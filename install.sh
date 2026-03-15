@@ -44,7 +44,7 @@ chmod 755 "$PLUGIN_DIR/plugin.pyc"
 
 echo "================================================="
 echo "✅ CinemaIQ Installation Complete!"
-echo "🔄 GUI will restart in 5 seconds..."
+echo "🔄 Restarting GUI NOW..."
 echo "================================================="
-sleep 1; echo "4..."; sleep 1; echo "3..."; sleep 1; echo "2..."; sleep 1; echo "1..."; sleep 1;
+sync
 killall -9 enigma2
