@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plugin SYSTEM "http://www.dream-multimedia-tv.de/enigma2/dtd/plugin1.dtd">
+<plugin
+    name="CinemaIQ"
+    internal_name="cinemaiq"
+    description="أحلى بلاجن سينمائي - معلومات + AI + تقييمات + أفلام مشابهة"
+    version="1.0"
+    author="CinemaIQ"
+    needsRestart="false"
+    createMenuEntry="true"
+    minPluginDescriptionVersion="5"
+/>
