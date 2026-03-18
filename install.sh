@@ -23,22 +23,25 @@ wget --no-check-certificate "$REPO_URL/plugin.png" -O "$PLUGIN_DIR/plugin.png"
 mkdir -p "$PLUGIN_DIR/meta"
 wget --no-check-certificate "$REPO_URL/meta/plugin_cinemaiq.xml" -O "$PLUGIN_DIR/meta/plugin_cinemaiq.xml"
 
-# 4. Deep Clean & Fresh Configuration
+# 4. Deep Clean & Configuration
 KEYS_FILE="/etc/cinemaiq_keys.conf"
 DEBUG_LOG="/tmp/cinemaiq_debug.log"
 TMP_CACHE="/tmp/cinemaiq/"
 
-echo "🧹 Performing deep clean of old configurations and logs..."
-rm -f "$KEYS_FILE"
+echo "🧹 Cleaning logs and cache..."
 rm -f "$DEBUG_LOG"
 rm -rf "$TMP_CACHE"
 
-echo "🔑 Creating fresh keys.conf template at $KEYS_FILE"
-echo "# CinemaIQ API Keys Configuration" > "$KEYS_FILE"
-echo "# Get your keys at: https://console.groq.com/ | https://www.themoviedb.org/settings/api" >> "$KEYS_FILE"
-echo "GROQ_KEY=" >> "$KEYS_FILE"
-echo "TMDB_KEY=" >> "$KEYS_FILE"
-echo "OMDB_KEY=" >> "$KEYS_FILE"
+if [ ! -f "$KEYS_FILE" ]; then
+    echo "🔑 Creating fresh keys.conf template at $KEYS_FILE"
+    echo "# CinemaIQ API Keys Configuration" > "$KEYS_FILE"
+    echo "# Get your keys at: https://console.groq.com/ | https://www.themoviedb.org/settings/api" >> "$KEYS_FILE"
+    echo "GROQ_KEY=" >> "$KEYS_FILE"
+    echo "TMDB_KEY=" >> "$KEYS_FILE"
+    echo "OMDB_KEY=" >> "$KEYS_FILE"
+else
+    echo "🔑 Existing keys.conf found, skipping creation."
+fi
 
 chmod 755 "$PLUGIN_DIR/plugin.py"
 
