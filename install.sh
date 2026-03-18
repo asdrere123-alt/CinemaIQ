@@ -15,7 +15,7 @@ mkdir -p "$PLUGIN_DIR"
 
 # 2. Download files
 echo "📥 Downloading plugin files..."
-wget --no-check-certificate "$REPO_URL/plugin.pyc" -O "$PLUGIN_DIR/plugin.pyc"
+wget --no-check-certificate "$REPO_URL/plugin.py" -O "$PLUGIN_DIR/plugin.py"
 wget --no-check-certificate "$REPO_URL/__init__.py" -O "$PLUGIN_DIR/__init__.py"
 wget --no-check-certificate "$REPO_URL/plugin.png" -O "$PLUGIN_DIR/plugin.png"
 
@@ -40,7 +40,7 @@ echo "GROQ_KEY=" >> "$KEYS_FILE"
 echo "TMDB_KEY=" >> "$KEYS_FILE"
 echo "OMDB_KEY=" >> "$KEYS_FILE"
 
-chmod 755 "$PLUGIN_DIR/plugin.pyc"
+chmod 755 "$PLUGIN_DIR/plugin.py"
 
 echo "================================================="
 echo "✅ CinemaIQ Installation Complete!"
